@@ -1,0 +1,66 @@
+How To Set Up Nginx Server Blocks (Virtual Hosts) on Ubuntu 
+
+1.Set Up New Document Root Directories
+athenakimhue@ubuntu$ sudo mkdir -p /var/www/kimhuent.com/html
+
+2. Create Sample Pages for Each Site
+athenakimhue@ubuntu$ nano /var/www/kimhuent.com/html/index.html
+<html>
+    <head>
+        <title>Welcome!</title>
+    </head>
+    <body>
+        <h1>Kim Hue NT!</h1>
+    </body>
+</html>
+
+3. Create Server Block Files for Each Domain
+athenakimhue@ubuntu$ sudo nano /etc/nginx/sites-available/kimhue.com
+
+athenakimhue@ubuntu$ gedit /etc/nginx/sites-available/kimhuent.com
+server {
+        listen 80;
+        listen [::]:80;
+
+        root /var/www/kimhue.com/html;
+        index index.html index.htm index.nginx-debian.html;
+
+        server_name kimhue.com www.kimhue.com;
+
+        location / {
+                try_files $uri $uri/ =404;
+        }
+}
+
+4.Enable your Server Blocks and Restart Nginx
+athenakimhue@ubuntu$ sudo ln -s /etc/nginx/sites-available/kimhue.com /etc/nginx/sites-enabled/
+athenakimhue@ubuntu$ sudo nano /etc/nginx/nginx.conf
+http {
+    . . .
+
+    server_names_hash_bucket_size 64;
+
+    . . .
+}
+
+athenakimhue@ubuntu$ sudo nginx -t
+
+athenakimhue@ubuntu$ sudo systemctl restart nginx
+
+5. Modify Your Local Hosts File for Testing(Optional)
+athenakimhue@ubuntu$ sudo nano /etc/hosts
+
+/etc/hosts
+127.0.0.1   localhost
+. . .
+
+203.0.113.5 kimhue.com www.kimhue.com
+
+6. Create empty file : $sudo touch /var/log/nginx/nginx_status.txt
+7. Delete # in line - Nginx.conf file
+         athenakimhue@ubuntu$ sudo nano /etc/nginx/nginx.conf
+         http {
+              . . .
+              server_names_hash_bucket_size 64;
+              . . .
+              }
