@@ -26,7 +26,7 @@ A Nginx manager gui web interface to make configging files and monitoring nginx 
  - **Hue**
 
 ### Images
-![alt text](https://github.com/athenakimhue/Nginx_Manager_GUI/blob/master/Images/02-%20Run.PNG)
+![alt text](https://github.com/athenakimhue/Proxy_Server_Manager_H2/blob/master/Images/03-%20GUI%202.png)
 ![alt text](https://github.com/athenakimhue/Nginx_Manager_GUI/blob/master/Images/04-%20Main%20GUI%202.PNG)
 
 *Copyright © 2020 H2+ All rights reserved.*
