@@ -14,7 +14,7 @@ A Nginx manager gui web interface to make configging files and monitoring nginx 
 1. Clone or download the code.
 2. Install Python : $sudo apt-get install python3.* 
 3. Install Nginx  : $sudo apt-get install nginx 
-4. Install Flask  : $sudo apt-get install flask
+4. Install Flask  : $sudo apt-get install python3-flask
 
 ### Running
 
