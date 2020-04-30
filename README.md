@@ -21,7 +21,7 @@
 3. Default account : username= 'admin' | password= 'admin' 
 
 ### Authors
- - **Hue**
+ - **Kim Hue Nguyen**
 
 ### Images
 ![alt text](https://github.com/athenakimhue/Proxy_Server_Manager_H2/blob/master/Images/01-%20Flask%20Python.PNG)
