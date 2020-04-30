@@ -1,4 +1,4 @@
-# Proxy server Manager H2+
+# GUI proxy server manager H2+
 
 
 ### Requirements
